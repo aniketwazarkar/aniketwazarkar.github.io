@@ -86,7 +86,7 @@ li {
 
  .section-image {
      /*background: #151515 url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=compress,format&crop=entropy&fit=crop&w=1199&h=799&q=80) no-repeat center center;*/
-     background: #f70909 url(../images/bgimg.jpeg) no-repeat center center;
+     background: #000000 url(../images/bgnew.jpeg) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
