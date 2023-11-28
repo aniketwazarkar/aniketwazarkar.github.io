@@ -1,29 +1,4 @@
-/**
- * =================================================================== 
- *
- *  ResumeTemplate v1.0 ClearCareer
- *  url: clearcareer.ca
- *  Design by: Iskender Piyale-Sheard
- *  website: izzydoesizzy.com
- *  Created 06-27-2016
- *  Last Updated: 03-19-2017
- *  ------------------------------------------------------------------
- *  Table of Contents:
 
- *  01. Global Styles
- *  02. Intro
- *  03. Social Icons
- *  04. Icon Fonts
- *  05. Section Styles
- *  06. Timeline Styles
- *  05. Footer
- EXTRAS
-
- * =================================================================== 
- */
-
-/* 01. Basic Styles
- * =================================================================== */
 
  html {
     overflow-x: hidden;
@@ -77,16 +52,8 @@ li {
     margin-top: 10px;
 }
 
-
-
-
-
-/* 02. Intro
- * =================================================================== */
-
- .section-image {
-     /*background: #151515 url(https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?dpr=2&auto=compress,format&crop=entropy&fit=crop&w=1199&h=799&q=80) no-repeat center center;*/
-     background: #000000 url(../images/bgnew.jpg) no-repeat center center;
+.section-image {
+     background: #000000 url(../images/nicebg.png) no-repeat center center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
@@ -108,6 +75,7 @@ li {
     opacity: .7;
  }
 
+ 
  .intro {
     vertical-align: middle;
     text-align: center;
@@ -153,9 +121,6 @@ li {
 
 
 
-/* 03. Social Icons
- * =================================================================== */
-
 .social {
   margin: 0 10px;
   padding-top: 1.3em;
@@ -187,16 +152,12 @@ li {
 }
 
 
-/* 04. Icon Font
- * =================================================================== */
 
  .lnr {
     font-size: 4em !important;
     color:#fff;
  }
 
-/* 05. Section Styles
- * =================================================================== */
 
 section {
     padding-top: 100px;
@@ -219,7 +180,7 @@ section {
 
 .section-colour {
     background-color: #1abc9c;
-    color: #fff;
+    color: #ffffff;
 }
 
 .section-colour p {
@@ -244,8 +205,7 @@ mark.blue {
 }
 
 
-/* 01. Timeline Styles
- * =================================================================== */
+
 
 .timeline-icon .fa {
     color: white;
@@ -253,22 +213,24 @@ mark.blue {
     font-size: 1.7em;
 }
 
-#skills {
-    /*background: #151515 url(https://images.unsplash.com/photo-1456983933114-c22026990f4b?dpr=2&auto=format&crop=entropy&fit=crop&w=1280&h=720&q=80) no-repeat center center;*/
-    background: #151515 url(../images/skills_bckgrnd.jpg) no-repeat center center;
+.section-primary {
+    background: #f5f5dc;
+    height: auto;
+}
+
+.resume {
+    background: #f5f5dc;
     height: auto;
 }
 
 #extracurricularsection {
-    /*background: #151515 url(images/charles-adrien-fournier-g815W4LH4F8-unsplash.jpg) no-repeat center center;*/
-    background: #f5edd6 /*url(../images/skills_bckgrnd.jpg) no-repeat center center*/;
+    background: #725c1b ;
     height: auto;
 }
 
 
 
-/* 05. Footer
- * =================================================================== */
+/* Footer*/
 
 footer {
     display: block;
@@ -286,15 +248,11 @@ footer p {
 }
 
 
-/* EXTRAS
- * =================================================================== */
 
 
-
-        /* Mouse Icon
-         * =================================================================== */
+/* Mouse Icon */
         .mouse-icon {
-            border: 2px solid #fff;
+            border: 2px solid #ffffff;
             border-radius: 16px;
             display: block;
             height: 50px;
@@ -352,14 +310,7 @@ footer p {
 
         .pad-xs {
             padding: 30px 0px;
-        }
-
-        /* /Mouse Icon
-         * =================================================================== */
-         
- 
-/* Media Queries
- * =================================================================== */
+        }       
 
 @media (max-width: 480px) {
     .social a {
