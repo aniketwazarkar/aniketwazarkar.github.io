@@ -1,3 +1,5 @@
+// This webpack config is not directly used by Gatsby
+// It serves as a reference for configuration that's applied in gatsby-node.js
 module.exports = {
   module: {
     rules: [
