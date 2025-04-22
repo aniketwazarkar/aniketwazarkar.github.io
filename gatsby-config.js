@@ -26,7 +26,8 @@ module.exports = {
         icon: 'src/images/favicons/favicon-96x96.png',
       },
     },
-    `gatsby-plugin-offline`,
+    // Temporarily disable offline plugin due to compatibility issues
+    // `gatsby-plugin-offline`,
     {
       resolve: 'gatsby-source-filesystem',
       options: {
