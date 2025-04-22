@@ -18,7 +18,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "deploy": "export NODE_OPTIONS=--openssl-legacy-provider && gatsby build && gh-pages -d public -b main"
+    "deploy": "export NODE_OPTIONS=--openssl-legacy-provider && gatsby build && gh-pages -d public -b gh-pages"
   },
   "husky": {
     "hooks": {
