@@ -4,8 +4,40 @@
  * See: https://www.gatsbyjs.org/docs/node-apis/
  */
 
+// ReadableStream polyfill for Node environment
+if (typeof global.ReadableStream === 'undefined') {
+  global.ReadableStream = class ReadableStream {
+    constructor() {
+      // Empty constructor
+    }
+    getReader() {
+      return {
+        read: () => Promise.resolve({ done: true, value: undefined }),
+        releaseLock: () => {},
+      };
+    }
+  };
+}
+
 const path = require('path');
 const _ = require('lodash');
+
+// Add a custom createSchemaCustomization function to ensure it runs before gatsby-transformer-remark
+exports.createSchemaCustomization = ({ actions }) => {
+  // This empty implementation ensures our polyfill is loaded before gatsby-transformer-remark runs
+  const { createTypes } = actions;
+  createTypes(`
+    type MarkdownRemark implements Node {
+      frontmatter: Frontmatter
+      html: String
+    }
+    type Frontmatter {
+      title: String
+      date: Date @dateformat
+      slug: String
+    }
+  `);
+};
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions;
