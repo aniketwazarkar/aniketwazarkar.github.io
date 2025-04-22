@@ -11,6 +11,10 @@
     "gatsby"
   ],
   "license": "MIT",
+  "engines": {
+    "node": "16.x",
+    "npm": "8.x"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "export NODE_OPTIONS=--openssl-legacy-provider && gatsby develop",
