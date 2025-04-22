@@ -81,6 +81,10 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
             test: /animejs/,
             use: loaders.null(),
           },
+          {
+            test: /swiper/,
+            use: loaders.null(),
+          },
         ],
       },
     });
@@ -97,6 +101,19 @@ exports.onCreateWebpackConfig = ({ stage, loaders, actions }) => {
         '@styles': path.resolve(__dirname, 'src/styles'),
         '@utils': path.resolve(__dirname, 'src/utils'),
       },
+      fallback: {
+        "path": require.resolve("path-browserify"),
+        "stream": require.resolve("stream-browserify"),
+        "util": require.resolve("util/"),
+        "url": require.resolve("url/"),
+        "buffer": require.resolve("buffer/"),
+        "querystring": require.resolve("querystring-es3"),
+      },
     },
+    externals: [
+      {
+        'swiper/esm/components/core/core-class.js': 'swiper',
+      },
+    ],
   });
 };
