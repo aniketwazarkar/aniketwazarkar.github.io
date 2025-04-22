@@ -1,5 +1,5 @@
 [build]
-  command = "./node_modules/.bin/gatsby build"
+  command = "node -r ./polyfills.js ./node_modules/.bin/gatsby build"
   publish = "public"
 
 [build.environment]

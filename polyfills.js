@@ -1,12 +1,5 @@
-/**
- * Implement Gatsby's Browser APIs in this file.
- *
- * See: https://www.gatsbyjs.org/docs/browser-apis/
- */
-
-// Polyfill for ReadableStream if it's not defined
+// ReadableStream polyfill
 if (typeof ReadableStream === 'undefined') {
-  // Simple mock implementation of ReadableStream
   global.ReadableStream = class ReadableStream {
     constructor() {
       // Empty constructor
@@ -19,3 +12,5 @@ if (typeof ReadableStream === 'undefined') {
     }
   };
 }
+
+module.exports = {}; 
