@@ -1,5 +1,5 @@
 [build]
-  command = "export NODE_OPTIONS=--openssl-legacy-provider && ./node_modules/.bin/gatsby build"
+  command = "./node_modules/.bin/gatsby build"
   publish = "public"
 
 [build.environment]
