@@ -1,9 +1,10 @@
 [build]
-  command = "npm run build"
+  command = "export NODE_OPTIONS=--openssl-legacy-provider && npm run build"
   publish = "public"
 
 [build.environment]
-  NODE_VERSION = "16.14.0"
-  NPM_VERSION = "8.5.5"
-  YARN_VERSION = "1.22.22"
-  YARN_FLAGS = "--no-ignore-optional --pure-lockfile" 
+  NODE_VERSION = "14.21.3"
+  NPM_VERSION = "6.14.18"
+
+[build.processing]
+  skip_processing = true 
