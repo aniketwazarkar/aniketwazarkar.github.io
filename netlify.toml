@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+
+[build.environment]
+  NODE_VERSION = "16.14.0"
+  NPM_VERSION = "8.5.5"
+  YARN_VERSION = "1.22.19"
+  YARN_FLAGS = "--no-ignore-optional --pure-lockfile" 
