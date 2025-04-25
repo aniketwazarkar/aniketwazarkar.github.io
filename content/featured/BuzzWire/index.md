@@ -2,7 +2,7 @@
 date: '3'
 title: 'BuzzWire - Real-Time Chat Application'
 cover: 'buzzWireArch.png'
-github: 'https://github.com/aniketwazarkar'
+github: 'https://github.com/aniketwazarkar/BuzzWire-Distributed_Chat_App'
 external: ''
 tech:
   - Socket.io

@@ -2,7 +2,7 @@
 date: '1'
 title: 'Covid-19 Tracker'
 cover: 'demo1.png'
-github: 'https://github.com/aniketwazarkar'
+github: 'https://github.com/aniketwazarkar/Covid-19-Tracker'
 external: 'https://covid19-tracker-84ef4.web.app/'
 tech:
   - ReactJS
