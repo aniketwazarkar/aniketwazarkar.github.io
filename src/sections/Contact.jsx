@@ -2,6 +2,7 @@ import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
 import { Particles } from "../components/Particles";
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,9 +13,16 @@ const Contact = () => {
   const [showAlert, setShowAlert] = useState(false);
   const [alertType, setAlertType] = useState("success");
   const [alertMessage, setAlertMessage] = useState("");
+
+  // Get EmailJS credentials from environment variables
+  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+
   const showAlertMessage = (type, message) => {
     setAlertType(type);
     setAlertMessage(message);
@@ -23,6 +31,7 @@ const Contact = () => {
       setShowAlert(false);
     }, 5000);
   };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -42,10 +51,10 @@ const Contact = () => {
       console.log("Sending with params:", templateParams);
 
       const response = await emailjs.send(
-        "service_svcbpyc",
-        "template_sz5xw09",
+        EMAILJS_SERVICE_ID,
+        EMAILJS_TEMPLATE_ID,
         templateParams,
-        "njGrHO3yE5Z-pJ0mr"
+        EMAILJS_PUBLIC_KEY
       );
 
       console.log("EmailJS Response:", response);
