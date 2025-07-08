@@ -28,26 +28,41 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      console.log("From submitted:", formData);
-      await emailjs.send(
-        "service_79b0nyj",
-        "template_17us8im",
-        {
-          from_name: formData.name,
-          to_name: "Ali",
-          from_email: formData.email,
-          to_email: "AliSanatiDev@gmail.com",
-          message: formData.message,
-        },
-        "pn-Bw_mS1_QQdofuV"
+      console.log("Form submitted:", formData);
+      
+      // Template parameters matching your EmailJS template structure
+      const templateParams = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message,
+        time: new Date().toLocaleString(),
+        title: "Contact Form Submission",
+      };
+
+      console.log("Sending with params:", templateParams);
+
+      const response = await emailjs.send(
+        "service_svcbpyc",
+        "template_sz5xw09",
+        templateParams,
+        "njGrHO3yE5Z-pJ0mr"
       );
+
+      console.log("EmailJS Response:", response);
+      console.log("Email should be sent to: wazarkar.aniket1@gmail.com");
+
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
-      showAlertMessage("success", "You message has been sent!");
+      showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
-      console.log(error);
-      showAlertMessage("danger", "Somthing went wrong!");
+      console.log("EmailJS Error Details:", {
+        message: error.message,
+        text: error.text,
+        status: error.status,
+        response: error.response
+      });
+      showAlertMessage("danger", `Error: ${error.message || "Something went wrong! Please try again."}`);
     }
   };
   return (
