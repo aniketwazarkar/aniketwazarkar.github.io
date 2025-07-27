@@ -15,9 +15,9 @@ const Contact = () => {
   const [alertMessage, setAlertMessage] = useState("");
 
   // Get EmailJS credentials from environment variables
-  const EMAILJS_SERVICE_ID = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const emailJSServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailJSTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailJSPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -37,6 +37,11 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
+      // Check if environment variables are set
+      if (!emailJSServiceId || !emailJSTemplateId || !emailJSPublicKey) {
+        throw new Error("EmailJS configuration is missing. Please check environment variables.");
+      }
+
       console.log("Form submitted:", formData);
       
       // Template parameters matching your EmailJS template structure
@@ -51,10 +56,10 @@ const Contact = () => {
       console.log("Sending with params:", templateParams);
 
       const response = await emailjs.send(
-        EMAILJS_SERVICE_ID,
-        EMAILJS_TEMPLATE_ID,
+        emailJSServiceId,
+        emailJSTemplateId,
         templateParams,
-        EMAILJS_PUBLIC_KEY
+        emailJSPublicKey
       );
 
       console.log("EmailJS Response:", response);
@@ -71,7 +76,18 @@ const Contact = () => {
         status: error.status,
         response: error.response
       });
-      showAlertMessage("danger", `Error: ${error.message || "Something went wrong! Please try again."}`);
+      
+      // Provide more specific error messages
+      let errorMessage = "Something went wrong! Please try again.";
+      if (error.message.includes("configuration is missing")) {
+        errorMessage = "Contact form is not configured. Please contact the site administrator.";
+      } else if (error.message.includes("Invalid template")) {
+        errorMessage = "Email template error. Please try again later.";
+      } else if (error.message.includes("Invalid service")) {
+        errorMessage = "Email service error. Please try again later.";
+      }
+      
+      showAlertMessage("danger", errorMessage);
     }
   };
   return (
