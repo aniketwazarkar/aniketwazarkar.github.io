@@ -1,116 +1,76 @@
-# 🚀 3D Developer Portfolio
+# Aniket Wazarkar - Portfolio
 
-A modern, animated 3D developer portfolio built with React, Three.js, TailwindCSS, and motion effects — designed to help you stand out and showcase your skills creatively.
+Welcome to my portfolio website! I'm a Software Development Engineer with experience building scalable, real-time systems serving 20M+ users.
 
-![3d Portfolio Screenshot GitHub](https://github.com/user-attachments/assets/9b0ed20e-074e-4f2a-81d8-20c9da751e9e)
+## 🚀 Live Demo
 
----
-
-## 📚 Table of Contents
-
-- [Features](#-features)
-- [Tech Stack](#-tech-stack)
-- [Project Structure](#-project-structure)
-- [Getting Started](#-getting-started)
-- [Assets](#-assets)
-- [Contact Me](#-contact-me)
-- [Suggestions or Feedback](#-suggestions-or-feedback)
-- [Like This Project?](#-like-this-project)
-
----
-
-## ✨ Features
-
-- 🔥 3D visuals powered by **React Three Fiber** and **Drei**
-- ⚡ Smooth transitions and scroll-based animations using **Framer Motion**
-- 🎨 Clean, responsive UI with **TailwindCSS**
-- 💌 Working contact form using **EmailJS**
-- 🧱 Beautiful UI enhancements with **Aceternity UI** and **Magic UI**
-- 🚀 Lightning-fast development with **Vite**
-
----
+Visit my portfolio: [https://aniketwazarkar.github.io](https://aniketwazarkar.github.io)
 
 ## 🛠 Tech Stack
 
-| Tech              | Description                           |
-|-------------------|---------------------------------------|
-| React             | Front-end JavaScript library          |
-| Vite              | Fast bundler and dev environment      |
-| TailwindCSS       | Utility-first CSS framework           |
-| React Three Fiber | 3D rendering with Three.js in React   |
-| Drei              | Helpers and abstractions for R3F      |
-| Framer Motion     | Animation library for React           |
-| EmailJS           | Form handling and email integration   |
-| Aceternity UI     | Custom UI components                  |
-| Magic UI          | Prebuilt UI elements and design extras|
+- **Frontend**: React 19, Vite, Tailwind CSS
+- **3D Graphics**: Three.js, React Three Fiber
+- **Animations**: Framer Motion, GSAP
+- **Contact**: EmailJS
+- **Deployment**: GitHub Pages
 
----
+## 🏢 Experience
 
-## 📁 Project Structure
+- **Software Development Engineer** at JIO (Oct 2023 - Present)
+  - Engineered Jiomeet+ (20M+ active users)
+  - Implemented sharding on 500M record collection
+  - Built real-time systems with microservices architecture
 
-```bash
-├── public/
-│   ├── assets/             # Images, textures, models
-│   ├── models/             # 3D Astronaut model
-│   └── vite.svg
-├── src/
-│   ├── components/         # Reusable components
-│   ├── constants/          # Reusable datas
-│   ├── sections/           # Portfolio sections (Hero, About, etc.)
-│   ├── App.jsx             # Main app file
-│   ├── index.css           # Tailwind css
-│   └── main.jsx            # Entry point
-├── tailwind.config.js
-└── vite.config.js
-```
+- **Data Engineer (Intern)** at Capgemini (June 2022 - April 2023)
+  - Built data pipelines using Python and SQL
+  - Worked with cloud-native environments
 
----
+## 🎓 Education
 
-## 🚀 Getting Started
-1. Clone the Repository
-```bash
-git clone https://github.com/Aniket-Wazarkar/Portfolio.git
-cd Portfolio
-```
-2. Install Dependencies
-```bash
-npm install
-```
-3. Run the Development Server
-```bash
-npm run dev
-```
-The app will be available at http://localhost:5173.
+- **Bachelor of Engineering - Computer Engineering** from Savitribai Phule Pune University (CGPA: 9.47/10)
+- **Diploma in Computer Engineering** from Government Polytechnic Amravati (92.94%)
 
----
+## 🛠 Installation & Development
 
-## 🔗 Assets
-Assets used in the project can be found [here](https://github.com/user-attachments/files/19820923/public.zip)
+1. Clone the repository
+   ```bash
+   git clone https://github.com/aniketwazarkar/aniketwazarkar.github.io.git
+   cd aniketwazarkar.github.io
+   ```
 
----
+2. Install dependencies
+   ```bash
+   npm install
+   ```
 
-## 📬 Contact Me
-[![Instagram](https://img.shields.io/badge/Instagram-%23E4405F.svg?logo=Instagram&logoColor=white)](https://www.instagram.com/ali.sanatidev/reels/) 
-[![Static Badge](https://img.shields.io/badge/Youtube-%23FF0033?style=flat&logo=youtube)](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/ali-sanati/) 
+3. Start development server
+   ```bash
+   npm run dev
+   ```
 
----
+4. Build for production
+   ```bash
+   npm run build
+   ```
 
-## 💡 Suggestions or Feedback?
-Leave a comment on the [YouTube video](https://youtu.be/S9UQItTpwUQ) or open an issue here on GitHub.<br/>
-👉 What should I build next?
+## 📧 Contact
 
-- A beautiful Landing Page
+- **Email**: wazarkar.aniket1@gmail.com
+- **Phone**: +91-7507878592
+- **Location**: Pune, Maharashtra
+- **LinkedIn**: [aniketwazarkar](https://www.linkedin.com/in/aniketwazarkar)
+- **GitHub**: [aniketwazarkar](https://github.com/aniketwazarkar)
+- **LeetCode**: [aniketwazarkar](https://leetcode.com/aniketwazarkar)
 
-- A complete E-commerce site
+## 🎨 Features
 
-- A fun App Clone (YouTube, Netflix, etc.)
+- ✨ Modern 3D animations with Three.js
+- 📱 Fully responsive design
+- 🚀 Fast performance with Vite
+- 📧 Contact form with EmailJS
+- 🎯 SEO optimized
+- 🌙 Dark theme design
 
-Or another interactive Portfolio
+## 📄 License
 
-Let me know!
-
----
-
-## ⭐ Like This Project?
-Star the repo and [subscribe](https://www.youtube.com/channel/UCZhtUWTtk3bGJiMPN9T4HWA??sub_confirmation=1) to the YouTube channel for more dev content!
+This project is open source and available under the [MIT License](LICENSE).
