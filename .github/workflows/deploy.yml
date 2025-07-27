@@ -25,9 +25,9 @@ jobs:
         
       - name: Build
         env:
-          VITE_EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
-          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
-          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+          VITE_EMAILJS_SERVICE_ID: ${{ secrets.emailJSServiceId }}
+          VITE_EMAILJS_TEMPLATE_ID: ${{ secrets.emailJSTemplateId }}
+          VITE_EMAILJS_PUBLIC_KEY: ${{ secrets.emailJSPublicKey }}
         run: npm run build
         
       - name: Deploy to GitHub Pages
