@@ -19,7 +19,7 @@ const About = () => {
           <div className="z-10">
             <p className="headtext">Hi, I'm Aniket Wazarkar</p>
             <p className="subtext">
-              Over the last 2+ years, I developed my frontend and backend dev
+              Over the last 4 years, I developed my frontend and backend dev
               skills to deliver dynamic and software and web applications.
             </p>
           </div>
@@ -66,12 +66,12 @@ const About = () => {
             />
             <Card
               style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/auth0.png"
+              image="assets/logos/dotnet-pink.png"
               containerRef={grid2Container}
             />
             <Card
               style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/github.png"
+              image="assets/logos/blazor-pink.png"
               containerRef={grid2Container}
             />
           </div>
@@ -102,7 +102,7 @@ const About = () => {
           <div className="z-10 w-[50%]">
             <p className="headText">Teck Stack</p>
             <p className="subtext">
-              I specialize in a variety of languages, frameworks, and tools that
+              I specialize in a variety of languages, frameworks, and tools taht
               allow me to build robust and scalable applications
             </p>
           </div>

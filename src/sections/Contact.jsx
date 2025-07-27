@@ -88,13 +88,9 @@ const Contact = () => {
         <div className="flex flex-col items-start w-full gap-5 mb-10">
           <h2 className="text-heading">Let's Talk</h2>
           <p className="font-normal text-neutral-400">
-            Whether you're looking to build scalable backend systems, optimize performance-critical applications, or bring innovative solutions to life, I'm here to help
+            Whether you're loking to build a new website, improve your existing
+            platform, or bring a unique project to life, I'm here to help
           </p>
-          <div className="flex flex-col gap-2 text-sm text-neutral-400">
-            <p><strong>Email:</strong> wazarkar.aniket1@gmail.com</p>
-            <p><strong>Phone:</strong> +91-7507878592</p>
-            <p><strong>Location:</strong> Pune, Maharashtra</p>
-          </div>
         </div>
         <form className="w-full" onSubmit={handleSubmit}>
           <div className="mb-5">
