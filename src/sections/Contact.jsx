@@ -15,9 +15,10 @@ const Contact = () => {
   const [alertMessage, setAlertMessage] = useState("");
 
   // Get EmailJS credentials from environment variables
-  const emailJSServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const emailJSTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const emailJSPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  // Using process.env for Netlify compatibility
+  const emailJSServiceId = process.env.VITE_EMAILJS_SERVICE_ID || import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailJSTemplateId = process.env.VITE_EMAILJS_TEMPLATE_ID || import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailJSPublicKey = process.env.VITE_EMAILJS_PUBLIC_KEY || import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
