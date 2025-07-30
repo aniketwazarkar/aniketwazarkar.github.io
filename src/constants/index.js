@@ -243,36 +243,27 @@ export const mySocials = [
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
+    title: "Software Development Engineer",
+    job: "JIO",
+    date: "Oct 2023 - Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
+      "Engineered Jiomeet+ (over 20 million active users), integrated over 15-20 critical features and refactored legacy code, including key functionalities such as status management, real-time document collaboration, and link unfurling using cloud functions, enhancing collaboration experience and improving engagement by 30%.",
+      "Migrated and implemented sharding on a 500 million record collection, boosting associated APIs performance by 50%.",
+      "Contributed to the development of Jio Workspace, a collaborative workspace application.",
+      "Built User Status Management with publisher-subscriber model for multi-device support. Implemented a Bloom filter-based architecture during new account creation, reducing redundant database calls and decreasing CPU utilization by 40%.",
+      "Refactored legacy services and improved latency by 40%, reducing integration bugs and enabling frontend velocity.",
+      "Transitioned the media engine from third-party to a custom-built in-house solution, leveraging bare-metal servers to improve performance, reduce dependency on third-party services, and achieve greater control over media processing capabilities.",
     ],
   },
   {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    date: "2023-2024",
+    title: "Data Engineer (Intern)",
+    job: "Capgemini",
+    date: "June 2022 - April 2023",
     contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
-    ],
-  },
-  {
-    title: "Freelance Developer",
-    job: "Self-Employed",
-    date: "2025-Present",
-    contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
+      "Built and optimized data pipelines using Python and SQL for processing large volumes of structured and semi-structured data.",
+      "Collaborated with backend engineers to integrate APIs and data ingestion workflows in a cloud-native environment.",
+      "Worked on basic data validation, cleaning, and transformation tasks while collaborating with team on ETL best practices.",
+      "Presented regular progress reports to stakeholders, showcasing pipeline efficiency improvements.",
     ],
   },
 ];
