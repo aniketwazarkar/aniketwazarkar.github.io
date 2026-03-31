@@ -1,7 +1,6 @@
 import { useState } from "react";
 import emailjs from "@emailjs/browser";
 import Alert from "../components/Alert";
-import { Particles } from "../components/Particles";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -14,11 +13,9 @@ const Contact = () => {
   const [alertType, setAlertType] = useState("success");
   const [alertMessage, setAlertMessage] = useState("");
 
-  // Get EmailJS credentials from environment variables
-  // Using process.env for Netlify compatibility
-  const emailJSServiceId = process.env.VITE_EMAILJS_SERVICE_ID || import.meta.env.VITE_EMAILJS_SERVICE_ID;
-  const emailJSTemplateId = process.env.VITE_EMAILJS_TEMPLATE_ID || import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-  const emailJSPublicKey = process.env.VITE_EMAILJS_PUBLIC_KEY || import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
+  const emailJSServiceId = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+  const emailJSTemplateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+  const emailJSPublicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -38,14 +35,12 @@ const Contact = () => {
     setIsLoading(true);
 
     try {
-      // Check if environment variables are set
       if (!emailJSServiceId || !emailJSTemplateId || !emailJSPublicKey) {
         throw new Error("EmailJS configuration is missing. Please check environment variables.");
       }
 
       console.log("Form submitted:", formData);
       
-      // Template parameters matching your EmailJS template structure
       const templateParams = {
         name: formData.name,
         email: formData.email,
@@ -54,71 +49,54 @@ const Contact = () => {
         title: "Contact Form Submission",
       };
 
-      console.log("Sending with params:", templateParams);
-
-      const response = await emailjs.send(
+      await emailjs.send(
         emailJSServiceId,
         emailJSTemplateId,
         templateParams,
         emailJSPublicKey
       );
 
-      console.log("EmailJS Response:", response);
-      console.log("Email should be sent to: wazarkar.aniket1@gmail.com");
-
       setIsLoading(false);
       setFormData({ name: "", email: "", message: "" });
       showAlertMessage("success", "Your message has been sent!");
     } catch (error) {
       setIsLoading(false);
-      console.log("EmailJS Error Details:", {
-        message: error.message,
-        text: error.text,
-        status: error.status,
-        response: error.response
-      });
-      
-      // Provide more specific error messages
       let errorMessage = "Something went wrong! Please try again.";
       if (error.message.includes("configuration is missing")) {
         errorMessage = "Contact form is not configured. Please contact the site administrator.";
-      } else if (error.message.includes("Invalid template")) {
-        errorMessage = "Email template error. Please try again later.";
-      } else if (error.message.includes("Invalid service")) {
-        errorMessage = "Email service error. Please try again later.";
       }
       
       showAlertMessage("danger", errorMessage);
     }
   };
+
   return (
-    <section id="contact" className="relative flex items-center c-space section-spacing">
-      <Particles
-        className="absolute inset-0 -z-50"
-        quantity={100}
-        ease={80}
-        color={"#ffffff"}
-        refresh
-      />
+    <section id="contact" className="relative flex flex-col items-center justify-center c-space section-spacing min-h-screen">
       {showAlert && <Alert type={alertType} text={alertMessage} />}
-      <div className="flex flex-col items-center justify-center max-w-md p-5 mx-auto border border-white/10 rounded-2xl bg-primary">
-        <div className="flex flex-col items-start w-full gap-5 mb-10">
-          <h2 className="text-heading">Let's Talk</h2>
-          <p className="font-normal text-neutral-400">
-            Whether you're loking to build a new website, improve your existing
-            platform, or bring a unique project to life, I'm here to help
+      
+      {/* Massive Typography CTA above form */}
+      <div className="text-center mb-16">
+        <h2 className="text-[12vw] sm:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter text-page-text uppercase">
+          LET'S <span className="text-accent">WORK</span>
+        </h2>
+      </div>
+
+      {/* Grid Card Form */}
+      <div className="grid-card w-full max-w-2xl mx-auto shadow-2xl">
+        <div className="flex flex-col items-start w-full gap-2 mb-10 text-center sm:text-left">
+          <p className="font-normal text-neutral md:text-lg">
+            Whether you're looking to build a new architecture, level up your backend, or bring a unique product to life, I'm here to help.
           </p>
         </div>
-        <form className="w-full" onSubmit={handleSubmit}>
-          <div className="mb-5">
-            <label htmlFor="name" className="feild-label">
-              Full Name
-            </label>
+        
+        <form className="w-full flex flex-col gap-6" onSubmit={handleSubmit}>
+          <div>
+            <label htmlFor="name" className="field-label">Full Name</label>
             <input
               id="name"
               name="name"
               type="text"
-              className="field-input field-input-focus"
+              className="field-input"
               placeholder="John Doe"
               autoComplete="name"
               value={formData.name}
@@ -126,34 +104,28 @@ const Contact = () => {
               required
             />
           </div>
-          <div className="mb-5">
-            <label htmlFor="email" className="feild-label">
-              Email
-            </label>
+          <div>
+            <label htmlFor="email" className="field-label">Email</label>
             <input
               id="email"
               name="email"
               type="email"
-              className="field-input field-input-focus"
-              placeholder="JohnDoe@email.com"
+              className="field-input"
+              placeholder="hello@example.com"
               autoComplete="email"
               value={formData.email}
               onChange={handleChange}
               required
             />
           </div>
-          <div className="mb-5">
-            <label htmlFor="message" className="feild-label">
-              Message
-            </label>
+          <div>
+            <label htmlFor="message" className="field-label">Message</label>
             <textarea
               id="message"
               name="message"
-              type="text"
               rows="4"
-              className="field-input field-input-focus"
+              className="field-input resize-none"
               placeholder="Share your thoughts..."
-              autoComplete="message"
               value={formData.message}
               onChange={handleChange}
               required
@@ -161,9 +133,9 @@ const Contact = () => {
           </div>
           <button
             type="submit"
-            className="w-full px-1 py-3 text-lg text-center rounded-md cursor-pointer bg-radial from-lavender to-royal hover-animation"
+            className="btn-accent w-full mt-4"
           >
-            {!isLoading ? "Send" : "Sending..."}
+            {!isLoading ? "Send Message" : "Sending..."}
           </button>
         </form>
       </div>
