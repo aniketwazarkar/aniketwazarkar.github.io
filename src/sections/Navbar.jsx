@@ -26,19 +26,28 @@ const ThemeToggle = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
-    // Check system preference or class presence
-    if (document.documentElement.classList.contains("dark") || window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    // Check system preference or class presence or localStorage
+    if (
+      localStorage.getItem("theme") === "dark" ||
+      (!("theme" in localStorage) && window.matchMedia("(prefers-color-scheme: dark)").matches) ||
+      document.documentElement.classList.contains("dark")
+    ) {
       setIsDark(true);
       document.documentElement.classList.add("dark");
+    } else {
+      setIsDark(false);
+      document.documentElement.classList.remove("dark");
     }
   }, []);
 
   const toggleTheme = () => {
     if (isDark) {
       document.documentElement.classList.remove("dark");
+      localStorage.setItem("theme", "light");
       setIsDark(false);
     } else {
       document.documentElement.classList.add("dark");
+      localStorage.setItem("theme", "dark");
       setIsDark(true);
     }
   };
@@ -46,14 +55,100 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className="p-2 ml-1 sm:ml-2 transition-colors rounded-full text-page-text hover:bg-black/5 dark:hover:bg-white/10"
+      className={`relative flex items-center w-[64px] h-[30px] sm:w-[72px] sm:h-[34px] ml-1 sm:ml-2 rounded-full overflow-hidden transition-all duration-500 shadow-inner shrink-0 group`}
+      style={{
+        background: isDark 
+          ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" 
+          : "linear-gradient(135deg, #93c5fd 0%, #e0f2fe 100%)",
+        boxShadow: "inset 0 2px 6px rgba(0,0,0,0.3), inset 0 -1px 2px rgba(255,255,255,0.1)",
+        WebkitTapHighlightColor: "transparent"
+      }}
       aria-label="Toggle Theme"
     >
-      {isDark ? (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg>
-      ) : (
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-      )}
+      <div className="absolute inset-0 w-full h-full pointer-events-none rounded-full overflow-hidden">
+        {/* Stars */}
+        <div
+          className={`absolute inset-0 transition-opacity duration-700 ${
+            isDark ? "opacity-100" : "opacity-0"
+          }`}
+        >
+          <div className="absolute top-[6px] left-[14px] w-[1.5px] h-[1.5px] bg-white rounded-full shadow-[0_0_3px_1px_rgba(255,255,255,0.9)]"></div>
+          <div className="absolute top-[14px] left-[26px] w-[1px] h-[1px] bg-[rgba(255,255,255,0.9)] rounded-full"></div>
+          <div className="absolute top-[10px] left-[36px] w-[1.5px] h-[1.5px] bg-white rounded-full shadow-[0_0_3px_1px_rgba(255,255,255,0.9)]"></div>
+          <div className="absolute top-[6px] left-[8px] w-[1px] h-[1px] bg-[rgba(255,255,255,0.9)] rounded-full"></div>
+        </div>
+
+        {/* Sun/Moon */}
+        <div
+          className={`absolute rounded-full transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] z-0`}
+          style={{
+            width: "14px",
+            height: "14px",
+            top: "50%",
+            transform: isDark
+              ? "translate(16px, -50%) rotate(-10deg)"
+              : "translate(28px, -20%) rotate(0)",
+            backgroundColor: isDark ? "transparent" : "#FFD260",
+            boxShadow: isDark ? "inset -4px -1.5px 0 1px #fff" : "0 0 12px 3px rgba(255, 210, 96, 0.5)",
+          }}
+        ></div>
+
+        {/* Hills SVG */}
+        <svg
+          viewBox="0 0 72 34"
+          preserveAspectRatio="none"
+          className="absolute bottom-0 left-0 w-full h-full pointer-events-none transition-all duration-500 z-10"
+        >
+          {/* Back Right Hill */}
+          <path
+            d="M 30 34 C 40 16, 60 18, 72 34 Z"
+            fill={isDark ? "#1e293b" : "#86efac"}
+            className="transition-colors duration-500"
+          />
+          {/* Middle Hill */}
+          <path
+            d="M 10 34 C 25 18, 45 22, 55 34 Z"
+            fill={isDark ? "#0f172a" : "#4ade80"}
+            className="transition-colors duration-500"
+          />
+          {/* Front Left Hill */}
+          <path
+            d="M -5 34 C 10 20, 25 24, 35 34 Z"
+            fill={isDark ? "#020617" : "#22c55e"}
+            className="transition-colors duration-500"
+          />
+        </svg>
+
+        {/* Tree */}
+        <div className="absolute right-[8px] sm:right-[10px] bottom-0 w-[14px] h-[20px] transition-transform duration-500 z-10">
+          {/* Trunk */}
+          <div
+            className={`absolute bottom-0 right-[4px] w-[5px] h-[10px] transition-colors duration-500 ${
+              isDark ? "bg-[#3f2a1d]" : "bg-[#A37B5B]"
+            }`}
+          ></div>
+          {/* Leaves */}
+          <div
+            className={`absolute bottom-[6px] right-[-2px] w-[12px] h-[12px] rounded-full transition-colors duration-500 ${
+              isDark ? "bg-[#0f172a]" : "bg-[#22c55e]"
+            }`}
+          ></div>
+          <div
+            className={`absolute bottom-[10px] right-[2px] w-[10px] h-[10px] rounded-full transition-colors duration-500 ${
+              isDark ? "bg-[#020617]" : "bg-[#4ade80]"
+            }`}
+          ></div>
+        </div>
+      </div>
+
+      {/* The White Knob */}
+      <div
+        className={`bg-white rounded-full z-20 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-[0_2px_6px_rgba(0,0,0,0.3)] w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] ${
+          isDark 
+            ? "translate-x-[36px] sm:translate-x-[40px]" 
+            : "translate-x-[3px] sm:translate-x-[3px]"
+        }`}
+      ></div>
     </button>
   );
 };
