@@ -244,8 +244,19 @@ export const mySocials = [
 export const experiences = [
   {
     title: "Software Development Engineer",
+    job: "Smallcase Platforms",
+    date: "Sept 2025 - Present",
+    contents: [
+      "Engineered resilient, high-throughput financial microservices supporting high-frequency order routing and executing complex portfolio trades.",
+      "Architected real-time notification pipelines for margin updates and dynamic portfolio state distribution leveraging WebSocket infrastructure.",
+      "Collaborated closely with cross-functional design and product teams to implement robust unified investor dashboard experiences using modern React and Golang.",
+      "Diagnosed and resolved critical latency bottlenecks within legacy ledger synchronization systems, achieving a 35% reduction in cross-service payload sizes."
+    ],
+  },
+  {
+    title: "Software Development Engineer",
     job: "JIO",
-    date: "Oct 2023 - Present",
+    date: "Oct 2023 - Sept 2025",
     contents: [
       "Engineered Jiomeet+ (over 20 million active users), integrated over 15-20 critical features and refactored legacy code, including key functionalities such as status management, real-time document collaboration, and link unfurling using cloud functions, enhancing collaboration experience and improving engagement by 30%.",
       "Migrated and implemented sharding on a 500 million record collection, boosting associated APIs performance by 50%.",
