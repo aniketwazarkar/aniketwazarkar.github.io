@@ -38,7 +38,12 @@ export const Timeline = ({ data }) => {
               <div className="hidden md:flex flex-col gap-1 pl-12 md:pl-20 text-page-text">
                 <h3 className="text-sm font-bold text-accent font-mono tracking-widest uppercase">{item.date}</h3>
                 <h3 className="text-3xl md:text-5xl font-extrabold tracking-tighter uppercase">{item.title}</h3>
-                <h3 className="text-lg md:text-xl font-medium text-neutral">{item.job}</h3>
+                <div className="flex items-center gap-3 mt-1">
+                  {item.logo && (
+                    <img src={item.logo} alt={item.job} className="w-8 h-8 md:w-10 md:h-10 rounded-full bg-white shadow-sm border border-card-border p-1" />
+                  )}
+                  <h3 className="text-lg md:text-xl font-medium text-neutral">{item.job}</h3>
+                </div>
               </div>
             </div>
 
@@ -46,7 +51,12 @@ export const Timeline = ({ data }) => {
               <div className="md:hidden block mb-6 text-left text-page-text">
                 <h3 className="text-xs font-bold text-accent font-mono tracking-widest uppercase mb-1">{item.date}</h3>
                 <h3 className="text-3xl font-extrabold tracking-tighter uppercase leading-tight mb-2">{item.title}</h3>
-                <h3 className="text-lg font-medium text-neutral">{item.job}</h3>
+                <div className="flex items-center gap-2 mt-1">
+                  {item.logo && (
+                    <img src={item.logo} alt={item.job} className="w-6 h-6 rounded-full bg-white shadow-sm border border-card-border p-[2px]" />
+                  )}
+                  <h3 className="text-lg font-medium text-neutral">{item.job}</h3>
+                </div>
               </div>
               <div className="bg-card-bg border border-card-border p-6 sm:p-8 rounded-[24px] shadow-sm">
                 {item.contents.map((content, idx) => (

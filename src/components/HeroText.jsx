@@ -8,52 +8,8 @@ const HeroText = () => {
     visible: { opacity: 1, x: 0 },
   };
   return (
-    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text">
-      {/* Desktop View */}
-      <div className="flex-col hidden md:flex c-space">
-        <motion.h1
-          className="text-4xl font-medium"
-          variants={variants}
-          initial="hidden"
-          animate="visible"
-          transition={{ delay: 1 }}
-        >
-          Hi I'm Aniket
-        </motion.h1>
-        <div className="flex flex-col items-start">
-          <motion.p
-            className="text-5xl font-medium text-neutral-300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.2 }}
-          >
-            A Developer <br /> Dedicated to Crafting
-          </motion.p>
-          <motion.div
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.5 }}
-          >
-            <FlipWords
-              words={words}
-              className="font-black text-white text-8xl"
-            />
-          </motion.div>
-          <motion.p
-            className="text-4xl font-medium text-neutral-300"
-            variants={variants}
-            initial="hidden"
-            animate="visible"
-            transition={{ delay: 1.8 }}
-          >
-            Web Solutions
-          </motion.p>
-        </div>
-      </div>
-      {/* Mobile View */}
-      <div className="flex- flex-col space-y-6 md:hidden">
+    <div className="z-10 mt-20 text-center md:mt-40 md:text-left rounded-3xl bg-clip-text c-space">
+      <div className="flex flex-col md:flex-col space-y-6 md:space-y-0">
         <motion.p
           className="text-4xl font-medium"
           variants={variants}
@@ -61,17 +17,19 @@ const HeroText = () => {
           animate="visible"
           transition={{ delay: 1 }}
         >
-          Hi,I'm Aniket
+          <span className="hidden md:inline">Hi I'm Aniket</span>
+          <span className="inline md:hidden">Hi, I'm Aniket</span>
         </motion.p>
-        <div>
+        <div className="flex flex-col items-center md:items-start space-y-6 md:space-y-0 md:pt-0">
           <motion.p
-            className="text-5xl font-black text-neutral-300"
+            className="text-5xl text-neutral-300 font-black md:font-medium"
             variants={variants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.2 }}
           >
-            Building
+            <span className="hidden md:inline">A Developer <br /> Dedicated to Crafting</span>
+            <span className="inline md:hidden">Building</span>
           </motion.p>
           <motion.div
             variants={variants}
@@ -81,17 +39,18 @@ const HeroText = () => {
           >
             <FlipWords
               words={words}
-              className="font-bold text-white text-7xl"
+              className="text-white font-bold md:font-black text-7xl md:text-8xl"
             />
           </motion.div>
           <motion.p
-            className="text-4xl font-black text-neutral300"
+            className="text-4xl text-neutral-300 font-black md:font-medium"
             variants={variants}
             initial="hidden"
             animate="visible"
             transition={{ delay: 1.8 }}
           >
-            Web Applications
+            <span className="hidden md:inline">Web Solutions</span>
+            <span className="inline md:hidden">Web Applications</span>
           </motion.p>
         </div>
       </div>

@@ -245,6 +245,7 @@ export const experiences = [
   {
     title: "Software Development Engineer",
     job: "Smallcase Platforms",
+    logo: "/assets/logos/smallcase.png",
     date: "Sept 2025 - Present",
     contents: [
       "Engineered resilient, high-throughput financial microservices supporting high-frequency order routing and executing complex portfolio trades.",
@@ -256,6 +257,7 @@ export const experiences = [
   {
     title: "Software Development Engineer",
     job: "JIO",
+    logo: "/assets/logos/jio.png",
     date: "Oct 2023 - Sept 2025",
     contents: [
       "Engineered Jiomeet+ (over 20 million active users), integrated over 15-20 critical features and refactored legacy code, including key functionalities such as status management, real-time document collaboration, and link unfurling using cloud functions, enhancing collaboration experience and improving engagement by 30%.",
@@ -269,6 +271,7 @@ export const experiences = [
   {
     title: "Data Engineer (Intern)",
     job: "Capgemini",
+    logo: "/assets/logos/capgemini.png",
     date: "June 2022 - April 2023",
     contents: [
       "Built and optimized data pipelines using Python and SQL for processing large volumes of structured and semi-structured data.",
