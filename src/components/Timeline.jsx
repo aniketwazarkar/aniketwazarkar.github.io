@@ -59,11 +59,13 @@ export const Timeline = ({ data }) => {
                 </div>
               </div>
               <div className="bg-card-bg border border-card-border p-6 sm:p-8 rounded-[24px] shadow-sm">
-                {item.contents.map((content, idx) => (
-                  <p className="mb-3 font-normal text-neutral md:text-lg leading-relaxed" key={idx}>
-                    {content}
-                  </p>
-                ))}
+                <ul className="list-disc space-y-3 pl-5">
+                  {item.contents.map((content, idx) => (
+                    <li className="font-normal text-neutral md:text-lg leading-relaxed" key={idx}>
+                      {content}
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>

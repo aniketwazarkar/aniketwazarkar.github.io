@@ -3,7 +3,7 @@ import { motion } from "motion/react";
 
 function Navigation() {
   return (
-    <ul className="flex items-center gap-1 sm:gap-4 px-2">
+    <ul className="flex items-center gap-0.5 sm:gap-4 px-1 sm:px-2">
       {[
         { name: "Home", href: "#home" },
         { name: "About", href: "#about" },
@@ -12,7 +12,7 @@ function Navigation() {
         <li key={link.name}>
           <a
             href={link.href}
-            className="px-3 sm:px-4 py-2 text-xs sm:text-sm font-medium transition-colors rounded-full text-page-text hover:bg-black/5 dark:hover:bg-white/10 uppercase tracking-widest"
+            className="px-1.5 sm:px-4 py-1.5 sm:py-2 text-[10px] sm:text-sm font-medium transition-colors rounded-full text-page-text hover:bg-black/5 dark:hover:bg-white/10 uppercase tracking-widest whitespace-nowrap"
           >
             {link.name}
           </a>
@@ -55,7 +55,7 @@ const ThemeToggle = () => {
   return (
     <button
       onClick={toggleTheme}
-      className={`relative flex items-center w-[64px] h-[30px] sm:w-[72px] sm:h-[34px] ml-1 sm:ml-2 rounded-full overflow-hidden transition-all duration-500 shadow-inner shrink-0 group`}
+      className={`relative flex items-center w-[52px] h-[26px] sm:w-[72px] sm:h-[34px] ml-0.5 sm:ml-2 rounded-full overflow-hidden transition-all duration-500 shadow-inner shrink-0 group`}
       style={{
         background: isDark 
           ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" 
@@ -143,9 +143,9 @@ const ThemeToggle = () => {
 
       {/* The White Knob */}
       <div
-        className={`bg-white rounded-full z-20 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-[0_2px_6px_rgba(0,0,0,0.3)] w-[24px] h-[24px] sm:w-[28px] sm:h-[28px] ${
-          isDark 
-            ? "translate-x-[36px] sm:translate-x-[40px]" 
+        className={`bg-white rounded-full z-20 transition-all duration-700 ease-[cubic-bezier(0.34,1.56,0.64,1)] shadow-[0_2px_6px_rgba(0,0,0,0.3)] w-[20px] h-[20px] sm:w-[28px] sm:h-[28px] ${
+          isDark
+            ? "translate-x-[29px] sm:translate-x-[40px]"
             : "translate-x-[3px] sm:translate-x-[3px]"
         }`}
       ></div>
@@ -160,7 +160,7 @@ const Navbar = () => {
         initial={{ y: 100, opacity: 0 }}
         animate={{ y: 0, opacity: 1 }}
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-        className="flex items-center justify-between p-2 shadow-2xl bg-white/60 dark:bg-[#111111]/70 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-full">
+        className="flex items-center justify-between p-1.5 sm:p-2 shadow-2xl bg-white/60 dark:bg-[#111111]/70 backdrop-blur-xl border border-black/5 dark:border-white/10 rounded-full">
         {/* Mobile-friendly inner wrapping */}
         <div className="flex items-center w-full justify-between sm:justify-center">
           <nav className="flex">
@@ -174,7 +174,7 @@ const Navbar = () => {
             
             <a
               href="#contact"
-              className="ml-2 sm:ml-4 px-5 sm:px-7 py-2.5 sm:py-3 text-xs sm:text-sm font-bold text-white uppercase tracking-widest bg-accent rounded-full hover:bg-[#d97300] transition-colors shadow-lg shadow-accent/30"
+              className="ml-1 sm:ml-4 px-3 sm:px-7 py-1.5 sm:py-3 text-[10px] sm:text-sm font-bold text-white uppercase tracking-widest bg-accent rounded-full hover:bg-[#d97300] transition-colors shadow-lg shadow-accent/30 whitespace-nowrap"
             >
               Contact
             </a>

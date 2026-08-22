@@ -2,22 +2,28 @@ import { OrbitingCircles } from "./OrbitingCircles";
 
 export function Frameworks() {
   const skills = [
-    "auth0",
-    "blazor",
+    "go",
     "cplusplus",
-    "csharp",
-    "css3",
-    "dotnet",
-    "dotnetcore",
-    "git",
-    "html5",
+    "java",
+    "python",
+    "typescript",
     "javascript",
-    "microsoft",
-    "react",
-    "sqlite",
-    "tailwindcss",
-    "vitejs",
-    "wordpress",
+    "nodedotjs",
+    "springboot",
+    "redis",
+    "mongodb",
+    "postgresql",
+    "cockroachdb",
+    "elasticsearch",
+    "apachekafka",
+    "rabbitmq",
+    "docker",
+    "kubernetes",
+    "amazonwebservices",
+    "googlecloud",
+    "nginx",
+    "argo",
+    "git",
   ];
   return (
     <div className="relative flex h-[15rem] w-full flex-col items-center justify-center">
@@ -35,6 +41,7 @@ export function Frameworks() {
   );
 }
 
+// eslint-disable-next-line react/prop-types
 const Icon = ({ src }) => (
   <img src={src} className="duration-200 rounded-sm hover:scale-110" />
-);
+);  

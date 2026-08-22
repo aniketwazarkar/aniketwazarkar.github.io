@@ -2,7 +2,7 @@ import { motion } from "motion/react";
 
 const Hero = () => {
   return (
-    <section id="home" className="relative flex flex-col items-center justify-center min-h-[90vh] overflow-hidden c-space pt-10">
+    <section id="home" className="relative flex flex-col items-center justify-center min-h-[90vh] overflow-hidden c-space pt-10 pb-28 sm:pb-10">
 
       {/* Top Left Coding Symbol */}
       <motion.div
@@ -16,7 +16,7 @@ const Hero = () => {
 
       <div className="relative flex items-center justify-center w-full max-w-[1400px] mt-20 sm:mt-10 z-10">
         {/* Massive Text Split */}
-        <h1 className="text-[15vw] sm:text-[12vw] md:text-[8rem] lg:text-[10rem] leading-none font-bold tracking-tighter text-page-text uppercase flex items-center justify-center gap-2 sm:gap-6 flex-wrap whitespace-nowrap">
+        <h1 className="text-[11vw] sm:text-[12vw] md:text-[8rem] lg:text-[10rem] leading-none font-bold tracking-tighter text-page-text uppercase flex items-center justify-center gap-2 sm:gap-6 flex-wrap">
           <motion.span
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
@@ -30,7 +30,7 @@ const Hero = () => {
             initial={{ opacity: 0, scale: 0.5, rotate: -45 }}
             animate={{ opacity: 1, scale: 1, rotate: 0 }}
             transition={{ duration: 1.2, type: "spring", bounce: 0.4 }}
-            className="mx-2 sm:mx-6 flex items-center justify-center relative w-[12vw] h-[12vw] max-w-[120px] max-h-[120px] min-w-[70px] min-h-[70px]"
+            className="mx-2 sm:mx-6 flex items-center justify-center relative w-[11vw] h-[11vw] max-w-[120px] max-h-[120px] min-w-[44px] min-h-[44px]"
           >
             {/* Outer precision ring */}
             <svg className="absolute inset-0 w-full h-full text-page-text opacity-30 animate-[spin_20s_linear_infinite]" viewBox="0 0 100 100">

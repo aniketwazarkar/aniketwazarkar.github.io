@@ -23,7 +23,19 @@ const Projects = () => {
       id="work"
     >
       <div className="max-w-7xl mx-auto">
-        <h2 className="text-heading mb-16 sm:mb-24 text-center">Selected Works</h2>
+        <h2 className="text-heading mb-4 text-center">Selected Works</h2>
+        <p className="text-center text-neutral mb-10 sm:mb-14">
+          &quot;Selected&quot; because showing all of them would be a war crime. Head to{" "}
+          <a
+            href="https://github.com/aniketwazarkar"
+            target="_blank"
+            rel="noreferrer"
+            className="text-accent hover:underline"
+          >
+            GitHub
+          </a>{" "}
+          if you enjoy suffering.
+        </p>
         
         <div className="flex flex-col border-t border-card-border">
           {myProjects.map((project) => (

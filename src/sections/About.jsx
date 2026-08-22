@@ -1,6 +1,5 @@
 import { Globe } from "../components/globe";
 import { Frameworks } from "../components/Frameworks";
-import CopyEmailButton from "../components/CopyEmailButton";
 
 const About = () => {
   const cards = [
@@ -47,7 +46,7 @@ const About = () => {
               <div className="flex flex-col gap-1.5 leading-relaxed">
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">1</span>
-                   <span className="text-page-text"><span className="text-purple-600 dark:text-purple-400">import</span> {'{'} Engineer {'}'} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-green-600 dark:text-green-400">'@aniket/core'</span>;</span>
+                   <span className="text-page-text"><span className="text-purple-600 dark:text-purple-400">import</span> {'{'} Engineer {'}'} <span className="text-purple-600 dark:text-purple-400">from</span> <span className="text-green-600 dark:text-green-400">&apos;@aniket/core&apos;</span>;</span>
                 </div>
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">2</span>
@@ -63,7 +62,7 @@ const About = () => {
                 </div>
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">5</span>
-                   <span className="text-page-text pl-8">focus: <span className="text-green-600 dark:text-green-400">'High Performance'</span>,</span>
+                   <span className="text-page-text pl-8">focus: <span className="text-green-600 dark:text-green-400">&apos;High Performance&apos;</span>,</span>
                 </div>
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">6</span>
@@ -71,7 +70,7 @@ const About = () => {
                 </div>
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">7</span>
-                   <span className="text-page-text pl-8">design: <span className="text-green-600 dark:text-green-400">'Pixel Perfect'</span></span>
+                   <span className="text-page-text pl-8">design: <span className="text-green-600 dark:text-green-400">&apos;Pixel Perfect&apos;</span></span>
                 </div>
                 <div className="flex group">
                    <span className="w-6 shrink-0 text-neutral/40 select-none">8</span>

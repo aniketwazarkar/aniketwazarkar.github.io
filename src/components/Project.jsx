@@ -6,6 +6,7 @@ const Project = ({
   description,
   subDescription,
   href,
+  liveDemo,
   image,
   tags,
   setPreview,
@@ -47,6 +48,7 @@ const Project = ({
           image={image}
           tags={tags}
           href={href}
+          liveDemo={liveDemo}
           closeModal={() => setIsHidden(false)}
         />
       )}

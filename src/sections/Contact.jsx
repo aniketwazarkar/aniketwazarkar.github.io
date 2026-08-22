@@ -77,7 +77,7 @@ const Contact = () => {
       {/* Massive Typography CTA above form */}
       <div className="text-center mb-16">
         <h2 className="text-[12vw] sm:text-[8rem] lg:text-[10rem] font-bold leading-none tracking-tighter text-page-text uppercase">
-          LET'S <span className="text-accent">WORK</span>
+          LET&apos;S <span className="text-accent">WORK</span>
         </h2>
       </div>
 
@@ -85,7 +85,7 @@ const Contact = () => {
       <div className="grid-card w-full max-w-2xl mx-auto shadow-2xl">
         <div className="flex flex-col items-start w-full gap-2 mb-10 text-center sm:text-left">
           <p className="font-normal text-neutral md:text-lg">
-            Whether you're looking to build a new architecture, level up your backend, or bring a unique product to life, I'm here to help.
+            Whether you&apos;re looking to build a new architecture, level up your backend, or bring a unique product to life, I&apos;m here to help.
           </p>
         </div>
         
